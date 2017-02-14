@@ -1,5 +1,7 @@
 package de.tim.schulung;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -21,8 +23,11 @@ public class HelloWebRestController {
     @Value("${message:Hello default}")
     private String message;
 
+    private static final Logger LOG = LoggerFactory.getLogger(HelloWebRestController.class);
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String sayHello() {
+        LOG.info("RESTCONTROLLER");
         return message + " " + env.getProperty("local.server.port");
     }
 
