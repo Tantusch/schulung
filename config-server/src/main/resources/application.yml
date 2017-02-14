@@ -1,0 +1,18 @@
+server:
+  port: 8889
+security:
+  user:
+    password: password
+    name: tim
+management:
+  security:
+    enabled: false
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${HOME}/Downloads/myConfigs
+encrypt:
+  key: strongpassword
+

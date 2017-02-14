@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: configserver
+
+eureka:
+  instance:
+    metadataMap:
+      user: tim
+      password: password
+    hostname: localhost
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
