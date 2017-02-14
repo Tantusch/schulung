@@ -1,0 +1,23 @@
+server:
+  port: 8082
+management:
+  security:
+    enabled: false
+cloud:
+  config:
+    retry:
+      maxAttempts: 10
+      initial-interval: 5000
+      max-interval: 10000
+zuul:
+  prefix: /api
+  ignoredServices: '*'
+  routes:
+    hello:
+      path: /hello/**
+      serviceId: hello-web
+#spring: 
+#zipkin:
+#baseUrl:
+
+
